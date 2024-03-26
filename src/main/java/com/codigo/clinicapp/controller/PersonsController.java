@@ -43,4 +43,9 @@ public class PersonsController {
     public ResponseBase deletePerson(@PathVariable int id){
         return personsService.deletePerson(id);
     }
+
+    @GetMapping("/reniec/{numero}")
+    public ResponseBase getInfoReniec(@PathVariable String numero) {
+        return personsService.getInfoReniec(numero);
+    }
 }

@@ -43,10 +43,10 @@ public class PersonsServiceImpl implements PersonsService {
 
     @Override
     public ResponseBase getInfoReniec(String numero) {
-        ResponseReniec reniec = getExecutionReniec(numero);
-        if (reniec != null) {
+        try {
+            ResponseReniec reniec = getExecutionReniec(numero);
             return new ResponseBase(Constants.CODE_SUCCESS, Constants.MESSAGE_SUCCESS, Optional.of(reniec));
-        } else {
+        } catch (Exception e) {
             return new ResponseBase(Constants.CODE_ERROR_DATA_NOT, Constants.MESSAGE_NON_DATA_RENIEC, Optional.empty());
         }
     }
