@@ -34,12 +34,12 @@ public class PersonsController {
         return personsService.findAllPersons();
     }
 
-    @PatchMapping("{id}")
+    @PostMapping("/update/{id}")
     public ResponseBase updatePerson(@PathVariable int id, @RequestBody RequestPersons requestPersons) {
         return personsService.updatePerson(id, requestPersons);
     }
 
-    @DeleteMapping("{id}")
+    @PostMapping("/delete/{id}")
     public ResponseBase deletePerson(@PathVariable int id){
         return personsService.deletePerson(id);
     }
